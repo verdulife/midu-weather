@@ -1,5 +1,13 @@
 <script lang="ts">
-	export let forecast;
+	import type { Forecast } from '$lib/types';
+
+	export let forecast: Forecast;
 </script>
 
-<pre>{JSON.stringify(forecast, null, 2)}</pre>
+<div class="scroll">
+	{#if !forecast}
+		<h1>Error loading data. Try again</h1>
+	{:else}
+		<pre>{JSON.stringify(forecast, null, 2)}</pre>
+	{/if}
+</div>
