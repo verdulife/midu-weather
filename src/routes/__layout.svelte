@@ -1,7 +1,7 @@
 <script lang="ts">
 	import 'verdu/fonts/circular.css';
 	import 'verdu/fonts/operator.css';
-	import { daySection } from '$lib/functions/time';
+	import { daySection } from '$lib/utils';
 	import { navVisible } from '$lib/stores';
 	import Nav from '$lib/components/Nav.svelte';
 </script>

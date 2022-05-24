@@ -20,7 +20,7 @@
 </script>
 
 <div class="wrapper col jend acenter fill">
-	<div class="sunny state-bg row fill" />
+	<div class="rain state-bg row fill" />
 	<img src="/logo.svg" alt="Midu Weather" />
 
 	<form class="col acenter xfill" on:submit|preventDefault={setCity}>
@@ -69,6 +69,18 @@
 
 	.sunny {
 		background: var(--bg-sunny);
+	}
+	.cloud {
+		background: var(--bg-cloud);
+	}
+	.rain {
+		background: var(--bg-rain);
+	}
+	.snow {
+		background: var(--bg-snow);
+	}
+	.thunder {
+		background: var(--bg-thunder);
 	}
 
 	img {
