@@ -2,9 +2,11 @@
 	import 'verdu/fonts/circular.css';
 	import 'verdu/fonts/operator.css';
 	import { daySection } from '$lib/functions/time';
+
+	const dayState = daySection() !== 'night' ? 'day' : 'night';
 </script>
 
-<div id="app" class="{daySection()} row fcenter fill">
+<div id="app" class="{dayState} row fcenter fill">
 	<slot />
 </div>
 
@@ -14,19 +16,11 @@
 		@import 'verdu/verdu.scss';
 	}
 
-	.night {
-		background: #2a2e4c;
-	}
-
-	.morning {
-		background: #f7cd5d;
-	}
-
 	.day {
-		background: #8fdff9;
+		background: var(--bg-day);
 	}
 
-	.evening {
-		background: #e49759;
+	.night {
+		background: var(--bg-night);
 	}
 </style>

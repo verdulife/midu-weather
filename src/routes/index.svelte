@@ -22,10 +22,10 @@
 </script>
 
 {#if start}
-	<div class="wrapper col fcenter fill" transition:fade>
+	<div class="sunny wrapper col fcenter fill" transition:fade>
 		<h1>Good {daySection()}</h1>
 		<form class="col acenter xfill" on:submit|preventDefault={setCity}>
-			<img src="/logo.svg" alt="Midu Weather">
+			<img src="/logo.svg" alt="Midu Weather" />
 			<label for="city">Search for a location</label>
 			<input class="white semi xfill" type="text" name="city" id="city" bind:value={userCity} />
 			<button class="pri semi">SET LOCATION</button>
@@ -37,6 +37,10 @@
 	.wrapper {
 		color: #fff;
 		padding: 40px;
+	}
+
+	.sunny {
+		background: var(--bg-sunny);
 	}
 
 	h1 {

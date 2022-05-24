@@ -20,7 +20,24 @@
 }
 
 :root {
-  font-family: "Circular Std", "Segoe UI Emoji", sans-serif;
+  --pri: #51b4fe;
+  --pri-light: #93cffe;
+  --pri-dark: #3498fe;
+  --sec: #fab63f;
+  --sec-light: #fed94f;
+  --sec-dark: #f36c29;
+  --ter: #2a2e4c;
+  --ter-light: #545c98;
+  --ter-dark: #0d0f18;
+
+  --bg-day: linear-gradient(30deg, var(--pri-dark) 0%, var(--pri-light) 75%);
+  --bg-night: linear-gradient(30deg, var(--ter) 0%, var(--ter-dark) 75%);
+  --bg-sunny: linear-gradient(30deg, transparent 75%, var(--sec-light) 90%, var(--sec) 100%);
+
+  --font-pri: "Circular Std", "Segoe UI Emoji", sans-serif;
+  --font-sec: "Operator Mono Lig", monospace;
+
+  font-family: var(--font-pri);
 }
 
 html,
@@ -48,7 +65,7 @@ body {
 //hyperlinks
 a {
   text-decoration: none;
-  color: $pri;
+  color: var(--pri);
 }
 
 //lists
@@ -59,5 +76,5 @@ ul {
 //code
 pre,
 code {
-  font-family: "Operator Mono Lig", monospace;
+  font-family: var(--font-sec);
 }
