@@ -2,6 +2,7 @@
 	import { UserSettings } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	import { navVisible } from '$lib/stores';
+	import { daySection } from '$lib/utils';
 
 	$navVisible = false;
 
@@ -20,8 +21,7 @@
 </script>
 
 <div class="wrapper col jend acenter fill">
-	<div class="rain state-bg row fill" />
-	<img src="/logo.svg" alt="Midu Weather" />
+	<img src={daySection() === 'day' ? '/logo.svg' : '/logo-w.svg'} alt="Midu Weather" />
 
 	<form class="col acenter xfill" on:submit|preventDefault={setCity}>
 		<label for="city">
@@ -47,40 +47,6 @@
 		position: relative;
 		color: #fff;
 		padding: 30px;
-
-		@media (hover: hover) {
-			max-width: 400px;
-			max-height: 800px;
-			border-radius: 3rem;
-			box-shadow: 0 60px 60px -20px var(--pri-dark), inset 2px 2px 2px -1px rgba(#fff, 0.5),
-				inset -2px -2px 2px -1px var(--pri-dark);
-			overflow: hidden;
-		}
-	}
-
-	.state-bg {
-		position: absolute;
-		inset: 0;
-		opacity: 0;
-		animation: fadeIn 500ms ease-out;
-		animation-delay: 500ms;
-		animation-fill-mode: forwards;
-	}
-
-	.sunny {
-		background: var(--bg-sunny);
-	}
-	.cloud {
-		background: var(--bg-cloud);
-	}
-	.rain {
-		background: var(--bg-rain);
-	}
-	.snow {
-		background: var(--bg-snow);
-	}
-	.thunder {
-		background: var(--bg-thunder);
 	}
 
 	img {
@@ -105,11 +71,11 @@
 		}
 
 		input {
-			background: rgba(#fff, 0.6);
+			background: rgba(#fff, 0.7);
 			font-size: 18px;
-			border: 1px solid var(--pri);
+			border: 1px solid rgba(#000, 0.6);
 			border-radius: 1rem;
-			box-shadow: inset 0 0 8px 0 var(--pri);
+			box-shadow: inset 0 0 8px 0 rgba(#000, 0.6);
 			padding: 1.25rem 2rem;
 		}
 
@@ -118,8 +84,8 @@
 			color: #fff;
 			border: 0;
 			border-radius: 1rem;
-			box-shadow: 0 2px 5px 0 var(--pri-dark), inset 2px 2px 2px -1px rgba(#fff, 0.5),
-				inset -2px -2px 2px -1px var(--pri-dark);
+			box-shadow: 0 10px 20px -10px rgba(#000, 0.6), inset 2px 2px 2px -1px rgba(#fff, 0.5),
+				inset -2px -2px 2px -1px rgba(#000, 0.6);
 			padding: 1.25rem 2rem;
 		}
 	}

@@ -4,10 +4,12 @@
 	import { daySection } from '$lib/utils';
 	import { navVisible } from '$lib/stores';
 	import Nav from '$lib/components/Nav.svelte';
+	import Background from '$lib/components/Background.svelte';
 </script>
 
 <div id="app" class="{daySection()} row fcenter fill">
 	<div class="wrapper row fill">
+		<Background />
 		<slot />
 
 		{#if $navVisible}
@@ -29,8 +31,8 @@
 			max-width: 400px;
 			max-height: 800px;
 			border-radius: 3rem;
-			box-shadow: 0 60px 60px -20px var(--pri-dark), inset 2px 2px 2px -1px rgba(#fff, 0.5),
-				inset -2px -2px 2px -1px var(--pri-dark);
+			box-shadow: 0 60px 60px -20px rgba(#000, 0.6), inset 2px 2px 2px -1px rgba(#fff, 0.5),
+				inset -2px -2px 2px -1px rgba(#000, 0.6);
 			overflow: hidden;
 		}
 	}

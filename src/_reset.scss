@@ -37,20 +37,18 @@
   --bg-night: linear-gradient(30deg, var(--ter) 0%, var(--ter-dark) 75%);
 
   --bg-sunny: radial-gradient(circle at top right, var(--sec) 10%, var(--sec-light) 20%, rgba(255, 255, 255, 0) 50%);
-
-  --bg-cloud: radial-gradient(circle at top left, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 40%),
-    radial-gradient(circle at top, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 60%),
-    radial-gradient(circle at top right, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 40%),
-    radial-gradient(circle at center left, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 60%),
-    radial-gradient(circle at center, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 40%),
-    radial-gradient(circle at center right, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 30%),
-    radial-gradient(circle at bottom left, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 40%),
-    radial-gradient(circle at bottom, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 60%),
-    radial-gradient(circle at bottom right, var(--grey-light) 10%, var(--grey) 20%, rgba(255, 255, 255, 0) 40%);
-
-  --bg-rain: url("/drops.png") no-repeat center, var(--bg-cloud);
-  --bg-snow: radial-gradient(circle at top right, var(--sec) 10%, var(--sec-light) 20%, rgba(255, 255, 255, 0) 50%);
-  --bg-thunder: radial-gradient(circle at top right, var(--sec) 10%, var(--sec-light) 20%, rgba(255, 255, 255, 0) 50%);
+  --bg-clear: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.3) 1%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0) 40%
+  );
+  --bg-cloud: radial-gradient(circle at top, var(--grey-light) 5%, var(--grey) 15%, rgba(255, 255, 255, 0) 40%),
+    radial-gradient(circle at top right, var(--grey-light) 5%, var(--grey) 15%, rgba(255, 255, 255, 0) 30%),
+    radial-gradient(circle at top left, var(--grey-light) 5%, var(--grey) 15%, rgba(255, 255, 255, 0) 30%);
+  --bg-rain: var(--bg-cloud);
+  --bg-snow: var(--bg-cloud);
+  --bg-thunder: var(--bg-cloud);
 
   --font-pri: "Circular Std", "Segoe UI Emoji", sans-serif;
   --font-sec: "Operator Mono Lig", monospace;

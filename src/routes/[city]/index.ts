@@ -70,12 +70,12 @@ async function getWeatherFrom(city: string) {
 export async function get({ params }: { params: { city: string } }) {
 	const { city } = params;
 
-	const forecast = await getWeatherFrom(city);
+	const data = await getWeatherFrom(city);
 
 	return {
 		status: 200,
 		body: {
-			forecast
+			data
 		}
 	};
 }

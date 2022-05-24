@@ -12,3 +12,4 @@ export const UserSettings = writable(JSON.parse(storedSettings as string) || def
 UserSettings.subscribe((val) => browser && (localStorage.UserSettings = JSON.stringify(val)));
 
 export const navVisible = writable(false);
+export const condition = writable('');
