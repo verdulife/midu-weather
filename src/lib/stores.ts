@@ -9,5 +9,6 @@ const defaultSettings = {
 
 const storedSettings = browser && localStorage.getItem('UserSettings');
 export const UserSettings = writable(JSON.parse(storedSettings as string) || defaultSettings);
-
 UserSettings.subscribe((val) => browser && (localStorage.UserSettings = JSON.stringify(val)));
+
+export const navVisible = writable(false);

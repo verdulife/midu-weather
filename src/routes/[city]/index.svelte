@@ -1,5 +1,8 @@
 <script lang="ts">
 	import type { Forecast } from '$lib/types';
+	import { navVisible } from '$lib/stores';
+
+	$navVisible = true;
 
 	export let forecast: Forecast;
 </script>

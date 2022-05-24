@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { UserSettings } from '$lib/stores';
 	import { goto } from '$app/navigation';
+	import { navVisible } from '$lib/stores';
+
+	$navVisible = false;
 
 	const { city } = $UserSettings;
 

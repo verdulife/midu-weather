@@ -2,17 +2,16 @@
 	import 'verdu/fonts/circular.css';
 	import 'verdu/fonts/operator.css';
 	import { daySection } from '$lib/functions/time';
+	import { navVisible } from '$lib/stores';
 	import Nav from '$lib/components/Nav.svelte';
-
-	const dayState = daySection() !== 'night' ? 'day' : 'night';
 </script>
 
-<div id="app" class="{dayState} row fcenter fill">
+<div id="app" class="{daySection()} row fcenter fill">
 	<div class="wrapper row fill">
 		<slot />
 
-		{#if true}
-		<Nav />
+		{#if $navVisible}
+			<Nav />
 		{/if}
 	</div>
 </div>
@@ -25,7 +24,7 @@
 
 	.wrapper {
 		position: relative;
-		
+
 		@media (hover: hover) {
 			max-width: 400px;
 			max-height: 800px;
