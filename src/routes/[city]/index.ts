@@ -10,6 +10,7 @@ function getHoursData(day: DayWeatherFromAPI): HourWeather[] {
 				celsius: h.temp_c
 			},
 			condition: h.condition.text,
+			icon: h.condition.icon,
 			wind: {
 				speed: {
 					mph: h.wind_mph,

@@ -3,6 +3,8 @@
 	import { condition, navVisible } from '$lib/stores';
 	import { normalizedCondition } from '$lib/utils';
 	import Stats from '$lib/components/Stats.svelte';
+	import Hours from '$lib/components/Hours.svelte';
+	import Days from '$lib/components/Days.svelte';
 
 	$navVisible = true;
 	export let data: Forecast;
@@ -13,7 +15,7 @@
 
 	$condition = normalizedCondition(currentWeather.condition);
 
-	console.log(data);
+	console.log(forecast);
 </script>
 
 <div class="scroll">
@@ -22,12 +24,8 @@
 			<h1>Error loading data. Try again</h1>
 		{:else}
 			<Stats {location} {currentWeather} />
+			<Hours hours={forecast[0].hour} />
+			<Days {forecast} />
 		{/if}
 	</div>
 </div>
-
-<style lang="scss">
-	.wrapper {
-		padding: 30px;
-	}
-</style>

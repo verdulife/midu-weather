@@ -3,6 +3,7 @@ export type HourWeatherFromAPI = {
 	temp_f: number;
 	condition: {
 		text: string;
+		icon: string;
 	};
 	wind_mph: number;
 	wind_kph: number;
@@ -23,6 +24,7 @@ export type HourWeather = {
 		celsius: number;
 	};
 	condition: string;
+	icon: string;
 	wind: {
 		speed: {
 			mph: number;
