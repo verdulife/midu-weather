@@ -2,6 +2,7 @@
 	import type { Forecast } from '$lib/types';
 	import { condition, navVisible } from '$lib/stores';
 	import { normalizedCondition } from '$lib/utils';
+	import Stats from '$lib/components/Stats.svelte';
 
 	$navVisible = true;
 	export let data: Forecast;
@@ -20,8 +21,7 @@
 		{#if !forecast}
 			<h1>Error loading data. Try again</h1>
 		{:else}
-			<h1>{location.city}</h1>
-			<p>{currentWeather.condition}</p>
+			<Stats {location} {currentWeather} />
 		{/if}
 	</div>
 </div>

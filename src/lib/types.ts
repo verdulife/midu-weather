@@ -42,11 +42,13 @@ export type DayWeather = {
 	hour: HourWeather[];
 };
 
+export type Location = {
+	city: string;
+	region: string;
+	country: string;
+};
+
 export type Forecast = {
-	location: {
-		city: string;
-		region: string;
-		country: string;
-	};
+	location: Location;
 	forecast: DayWeather[];
 };
