@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HourWeather } from '$lib/types';
 	import { onMount } from 'svelte';
+	import { transformScroll } from '$lib/utils';
 
 	export let hours: HourWeather[];
-
 	const getHour = new Date().getHours();
 
 	onMount(() => {
@@ -15,6 +15,8 @@
 				slider.scrollLeft = slide.offsetLeft;
 			}
 		});
+
+		slider.addEventListener('wheel', transformScroll);
 	});
 </script>
 
@@ -37,6 +39,7 @@
 	.slider {
 		padding: 0 20px;
 	}
+
 	.slide {
 		scroll-margin: 0 20px;
 	}

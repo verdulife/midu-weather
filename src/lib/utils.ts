@@ -30,3 +30,14 @@ export function normalizedCondition(condition: string): string {
 
 	return 'sunny';
 }
+
+export function transformScroll(event: WheelEvent) {
+	if (!event.deltaY) return;
+
+	if (event.currentTarget) {
+		const el = event.currentTarget as HTMLElement;
+
+		event.preventDefault();
+		el.scrollLeft += event.deltaY + event.deltaX;
+	}
+}

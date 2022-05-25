@@ -95,6 +95,7 @@ body {
 }
 
 .slider {
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
 
