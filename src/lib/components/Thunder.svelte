@@ -1,11 +1,17 @@
-<div class="thunder row fill" />
+<script lang="ts">
+	import { daySection } from '$lib/utils';
+</script>
+
+<div class="thunder row fill" style={daySection() === "day" ? '--lightning: lightgoldenrodyellow;' : ''} />
 
 <style lang="scss">
 	.thunder {
+		--lightning: var(--sec-light);
+
 		position: absolute;
 		inset: 0;
-		background: var(--sec-light);
-    opacity: 0;
+		background: var(--lightning);
+		opacity: 0;
 		animation: thunderFlash 6s ease-out infinite;
 	}
 

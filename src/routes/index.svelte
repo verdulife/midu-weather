@@ -21,7 +21,11 @@
 </script>
 
 <div class="wrapper col jend acenter fill">
-	<img src={daySection() === 'day' ? '/logo.svg' : '/logo-w.svg'} alt="Midu Weather" />
+	<img
+		class="xfill"
+		src={daySection() === 'day' ? '/logo.svg' : '/logo-w.svg'}
+		alt="Midu Weather"
+	/>
 
 	<form class="col acenter xfill" on:submit|preventDefault={setCity}>
 		<label for="city">
@@ -50,8 +54,12 @@
 	}
 
 	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 250px;
 		opacity: 0;
-		padding: 10px;
 		animation: fadeIn 1s ease-out;
 		animation-delay: 1s;
 		animation-fill-mode: forwards;
@@ -65,28 +73,25 @@
 		animation-fill-mode: forwards;
 
 		label {
-			font-size: 1.75rem;
+			font-size: 26px;
 			text-align: center;
 			margin-top: 100px;
 		}
 
 		input {
-			background: rgba(#fff, 0.7);
-			font-size: 18px;
-			border: 1px solid rgba(#000, 0.6);
+			background: rgba(#fff, 0.6);
+			font-size: 16px;
 			border-radius: 1rem;
-			box-shadow: inset 0 0 8px 0 rgba(#000, 0.6);
-			padding: 1.25rem 2rem;
+			padding: 20px 32px;
 		}
 
 		button {
-			background: var(--pri-dark);
+			background: var(--ter);
 			color: #fff;
+			font-size: 12px;
 			border: 0;
 			border-radius: 1rem;
-			box-shadow: 0 10px 20px -10px rgba(#000, 0.6), inset 2px 2px 2px -1px rgba(#fff, 0.5),
-				inset -2px -2px 2px -1px rgba(#000, 0.6);
-			padding: 1.25rem 2rem;
+			padding: 20px 32px;
 		}
 	}
 

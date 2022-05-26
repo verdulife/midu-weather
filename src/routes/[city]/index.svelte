@@ -14,8 +14,6 @@
 	const currentWeather = forecast[0].hour[getHour];
 
 	$condition = normalizedCondition(currentWeather.condition);
-
-	console.log(forecast);
 </script>
 
 <div class="scroll">

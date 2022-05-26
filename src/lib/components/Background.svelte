@@ -1,21 +1,10 @@
 <script lang="ts">
-	import { daySection } from '$lib/utils';
 	import { condition } from '$lib/stores';
 	import Rain from '$lib/components/Rain.svelte';
 	import Thunder from '$lib/components/Thunder.svelte';
 
-	$: rain = $condition === 'rain' ? true : false;
+	$: rain = $condition === 'rain' || 'snow' ? true : false;
 	$: thunder = $condition === 'thunder' ? true : false;
-
-	console.log($condition);
-
-	let parsedCondition: string;
-
-	$: if (daySection() === 'night' && $condition === 'sunny') {
-		parsedCondition = 'clear';
-	} else {
-		parsedCondition = $condition;
-	}
 </script>
 
 {#if rain}
@@ -26,7 +15,7 @@
 	{/if}
 {/if}
 
-<div class="{parsedCondition} state-bg row fill" />
+<div class="{$condition} state-bg row fill" />
 
 <style lang="scss">
 	.state-bg {
@@ -40,9 +29,6 @@
 
 	.sunny {
 		background: var(--bg-sunny);
-	}
-	.clear {
-		background: var(--bg-clear);
 	}
 	.cloud {
 		background: var(--bg-cloud);
