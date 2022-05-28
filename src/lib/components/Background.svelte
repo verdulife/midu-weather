@@ -3,8 +3,8 @@
 	import Rain from '$lib/components/Rain.svelte';
 	import Thunder from '$lib/components/Thunder.svelte';
 
-	$: rain = $condition === 'rain' || 'snow' ? true : false;
-	$: thunder = $condition === 'thunder' ? true : false;
+	$: rain = $condition === 'rain' || $condition === 'snow';
+	$: thunder = $condition === 'thunder';
 </script>
 
 {#if rain}

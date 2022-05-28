@@ -16,6 +16,7 @@
 				'--bg-card',
 				'linear-gradient(30deg, rgba(42, 46, 76, 0.7) 0%, rgba(52, 152, 254, 0.5) 75%)'
 			);
+			root.style.setProperty('--bg-card-active', 'linear-gradient(30deg, #51b4fe 0%, #3498fe 75%)');
 			root.style.setProperty(
 				'--bg-sunny',
 				'radial-gradient(circle at top right, rgba(255, 255, 255, 0.4) 1%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 40%)'

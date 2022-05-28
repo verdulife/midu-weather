@@ -20,7 +20,7 @@
 	nav {
 		position: absolute;
 		inset: auto 20px 20px 20px;
-		height: 70px;
+		height: 80px;
 		background: rgba(#fff, 0.1);
 		backdrop-filter: blur(10px);
 		border-radius: 1.5rem;

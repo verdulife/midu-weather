@@ -10,6 +10,8 @@
 		<h1>{location.city}</h1>
 		<p class="sub">{location.region}, {location.country}</p>
 
+		<img class="icon" src={currentWeather.icon} alt={currentWeather.condition} />
+
 		<output class="row xfill">
 			{currentWeather.temp.celsius}º
 		</output>
@@ -40,17 +42,25 @@
 	}
 
 	article {
+		position: relative;
 		background: var(--bg-card);
+		backdrop-filter: blur(10px);
 		color: #fff;
 		border-radius: 1.5rem;
 		padding: 20px 0;
 
-		*:not(ul) {
+		*:not(ul, .icon) {
 			padding: 0 20px;
 		}
 
 		.sub {
 			color: var(--grey-light);
+		}
+
+		.icon {
+			position: absolute;
+			top: 10px;
+			right: 10px;
 		}
 
 		output {

@@ -55,6 +55,7 @@
 	article {
 		width: 150px;
 		background: rgba(#000, 0.2);
+		backdrop-filter: blur(10px);
 		color: #fff;
 		border-radius: 1rem;
 		padding: 15px;
@@ -72,6 +73,6 @@
 	}
 
 	.active {
-		background: var(--bg-night);
+		background: var(--bg-card-active);
 	}
 </style>

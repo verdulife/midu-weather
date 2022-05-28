@@ -2,11 +2,30 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%svelte.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+		/>
+		<!-- PWA -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="theme-color" content="#000" />
+
+		<!-- Web assets -->
+		<link rel="manifest" href="%svelte.assets%/manifest.json" crossorigin="use-credentials" />
+		<meta name="apple-mobile-web-app-title" content="verdu" />
+		<link rel="apple-touch-icon" type="image/png" href="%svelte.assets%/mobile.png" />
+		<link rel="icon" type="image/png" href="%svelte.assets%/mobile.png" />
+		<link rel="icon" type="image/svg+xml" href="%svelte.assets%/favicon.svg" />
+
+		<!-- SEO -->
+		<meta name="author" content="verdu | verdu@live.com" />
+
 		%svelte.head%
 	</head>
+
 	<body>
-		<div>%svelte.body%</div>
+		<div id="svelte">%svelte.body%</div>
 	</body>
 </html>

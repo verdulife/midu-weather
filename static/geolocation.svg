@@ -1,0 +1,25 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	version="1.1"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:svgjs="http://svgjs.com/svgjs"
+	width="512"
+	height="512"
+	x="0"
+	y="0"
+	viewBox="0 0 32 32"
+	style="enable-background: new 0 0 512 512"
+	xml:space="preserve"
+	class="hovered-paths"
+>
+	<g>
+		<path
+			xmlns="http://www.w3.org/2000/svg"
+			d="m16 2.5a11.00517 11.00517 0 0 0 -10.99917 11.00018 12.98821 12.98821 0 0 0 2.27485 6.23322 58.83366 58.83366 0 0 0 7.67854 9.3416 1.499 1.499 0 0 0 2.0915 0 58.83243 58.83243 0 0 0 7.6786-9.34156 12.98821 12.98821 0 0 0 2.27485-6.23322 11.00521 11.00521 0 0 0 -10.99917-11.00022zm0 6a4.5 4.5 0 1 0 4.49967 4.5002 4.50246 4.50246 0 0 0 -4.49967-4.5002z"
+			fill-rule="evenodd"
+			fill="#000000"
+			data-original="#000000"
+			class="hovered-path"
+		></path>
+	</g>
+</svg>
