@@ -1,18 +1,34 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+
+	const routes = [
+		{
+			href: '/',
+			alt: 'Home',
+			src: '/home.svg'
+		},
+		{
+			href: '/search',
+			alt: 'Search',
+			src: '/search.svg'
+		},
+		{
+			href: '/settings',
+			alt: 'Settings',
+			src: '/settings.svg'
+		}
+	];
 </script>
 
 <nav class="row" transition:slide>
 	<ul class="row jcenter fill">
-		<li class="row fcenter yfill">
-			<a href="/">BACK</a>
-		</li>
-		<li class="row fcenter yfill">
-			<a href="#">2</a>
-		</li>
-		<li class="row fcenter yfill">
-			<a href="#">3</a>
-		</li>
+		{#each routes as { href, alt, src }}
+			<li class="row fcenter yfill">
+				<a class="fill" {href}>
+					<img class="fill" {src} {alt} />
+				</a>
+			</li>
+		{/each}
 	</ul>
 </nav>
 
@@ -21,7 +37,7 @@
 		position: absolute;
 		inset: auto 20px 20px 20px;
 		height: 80px;
-		background: rgba(#fff, 0.1);
+		background: rgba(#fff, 0.2);
 		backdrop-filter: blur(10px);
 		border-radius: 1.5rem;
 		z-index: 9;
@@ -33,6 +49,11 @@
 
 			a {
 				color: #fff;
+
+				img {
+					object-fit: contain;
+					padding: 30px;
+				}
 			}
 		}
 	}

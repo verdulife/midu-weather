@@ -13,3 +13,4 @@ UserSettings.subscribe((val) => browser && (localStorage.UserSettings = JSON.str
 
 export const navVisible = writable(false);
 export const condition = writable('');
+export const selectedHour = writable(new Date().getHours());

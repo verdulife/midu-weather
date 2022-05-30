@@ -145,3 +145,61 @@ pre,
 code {
 	font-family: var(--font-sec);
 }
+
+//autocomplete
+
+.autocomplete {
+	position: relative !important;
+	width: 100%;
+	height: 100% !important;
+	
+	.input-container {
+		position: fixed !important;
+		top: 30px;
+		left: 30px;
+		width: calc(100% - 60px) !important;
+		background: rgba(#fff, 0.6);
+		backdrop-filter: blur(10px);
+		border-radius: 1rem;
+		z-index: 1 !important;
+
+		input {
+			padding: 20px 32px !important;
+		}
+	}
+	
+	.autocomplete-list {
+		height: 100% !important;
+		max-height: none !important;
+		background: none !important;
+		border: none !important;
+		padding: 100px 30px !important;
+		z-index: 0 !important;
+
+		-webkit-overflow-scrolling: touch;
+
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+	}
+
+	.autocomplete-list-item {
+		color: #fff !important;
+		padding: 20px !important;
+		margin-top: 5px;
+	}
+
+	.selected {
+		background: var(--ter) !important;
+		border-radius: 1rem;
+	}
+	
+	.confirmed {
+		background: var(--ter-light) !important;
+		border-radius: 1rem;
+	}
+
+	&:after {
+		display: none !important;
+	}
+}

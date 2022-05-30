@@ -2,9 +2,14 @@
 	import type { HourWeather } from '$lib/types';
 	import { onMount } from 'svelte';
 	import { transformScroll } from '$lib/utils';
+	import { selectedHour } from '$lib/stores';
 
 	export let hours: HourWeather[];
 	const getHour = new Date().getHours();
+
+	function setHour(i: number) {
+		$selectedHour = i;
+	}
 
 	onMount(() => {
 		const slider = document.querySelector('.slider') as HTMLElement;
@@ -23,7 +28,7 @@
 <ul class="slider">
 	{#each hours as hour, i}
 		<li class="slide">
-			<article class="row acenter" class:active={getHour === i}>
+			<article class="row acenter" class:active={$selectedHour === i} on:click={() => setHour(i)}>
 				<img src={hour.icon} alt={hour.condition} />
 
 				<div class="col">
@@ -41,6 +46,7 @@
 	}
 
 	.slide {
+		cursor: pointer;
 		scroll-margin: 0 20px;
 	}
 

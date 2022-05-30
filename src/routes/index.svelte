@@ -8,13 +8,14 @@
 
 	const { city } = $UserSettings;
 
-	/* if (city) goto(city); */
+	if (city) goto(`address/${city}`);
 
 	function getGeolocation() {
 		navigator.geolocation.getCurrentPosition(({ coords }) => {
 			const { latitude, longitude } = coords;
 			if (latitude && longitude) {
-				goto(`${latitude},${longitude}`);
+				$UserSettings.city = `${latitude},${longitude}`;
+				goto(`address/${latitude},${longitude}`);
 			}
 		});
 	}
@@ -24,7 +25,7 @@
 	function setCity() {
 		if (userCity) {
 			$UserSettings.city = userCity;
-			goto(userCity);
+			goto(`address/${userCity}`);
 		}
 	}
 </script>
@@ -109,7 +110,7 @@
 				width: 40px;
 				height: 40px;
 				background: var(--sec);
-				border-radius: .75rem;
+				border-radius: 0.75rem;
 				opacity: 0.7;
 				padding: 8px;
 				margin-left: 10px;

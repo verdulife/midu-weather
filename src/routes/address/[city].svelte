@@ -1,19 +1,19 @@
 <script lang="ts">
 	import type { Forecast } from '$lib/types';
-	import { condition, navVisible } from '$lib/stores';
+	import { condition, navVisible, selectedHour } from '$lib/stores';
 	import { normalizedCondition } from '$lib/utils';
 	import Stats from '$lib/components/Stats.svelte';
 	import Hours from '$lib/components/Hours.svelte';
 	import Days from '$lib/components/Days.svelte';
 
 	$navVisible = true;
+
 	export let data: Forecast;
 
 	const { location, forecast } = data;
-	const getHour = new Date().getHours();
-	const currentWeather = forecast[0].hour[getHour];
+	$: currentWeather = forecast[0].hour[$selectedHour];
 
-	$condition = normalizedCondition(currentWeather.condition);
+	$: if (currentWeather) $condition = normalizedCondition(currentWeather.condition);
 </script>
 
 <div class="scroll">
