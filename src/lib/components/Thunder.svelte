@@ -1,8 +1,11 @@
 <script lang="ts">
-	import { daySection } from '$lib/utils';
+	import { dayState } from '$lib/stores';
 </script>
 
-<div class="thunder row fill" style={daySection() === "day" ? '--lightning: lightgoldenrodyellow;' : ''} />
+<div
+	class="thunder row fill"
+	style={$dayState === 'day' ? '--lightning: lightgoldenrodyellow;' : ''}
+/>
 
 <style lang="scss">
 	.thunder {

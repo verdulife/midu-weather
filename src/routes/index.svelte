@@ -2,7 +2,7 @@
 	import { UserSettings } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	import { navVisible } from '$lib/stores';
-	import { daySection } from '$lib/utils';
+	import { dayState } from '$lib/stores';
 
 	$navVisible = false;
 
@@ -24,7 +24,7 @@
 <div class="wrapper col jend acenter fill">
 	<img
 		class="logo xfill"
-		src={daySection() === 'day' ? '/logo.svg' : '/logo-w.svg'}
+		src={$dayState === 'day' ? '/logo.svg' : '/logo-w.svg'}
 		alt="Midu Weather"
 	/>
 

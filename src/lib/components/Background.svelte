@@ -9,10 +9,11 @@
 
 {#if rain}
 	<Rain />
+{/if}
 
-	{#if thunder}
-		<Thunder />
-	{/if}
+{#if thunder}
+	<Rain />
+	<Thunder />
 {/if}
 
 <div class="{$condition} state-bg row fill" />

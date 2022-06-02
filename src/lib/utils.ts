@@ -1,13 +1,5 @@
 import type { HourWeatherFromAPI, DayWeatherFromAPI, HourWeather, DayWeather } from '$lib/types';
 
-export function daySection(): string {
-	const now = new Date();
-	const hour = now.getHours();
-
-	if (hour >= 21 || hour < 6) return 'night';
-	return 'day';
-}
-
 export function normalizedCondition(condition: string): string {
 	const c = condition.toLowerCase();
 
