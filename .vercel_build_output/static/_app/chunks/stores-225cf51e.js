@@ -1,0 +1,1 @@
+import{w as t}from"./index-13b285a7.js";const s={temperature:"celsius",distance:"metric",city:null},n=localStorage.getItem("UserSettings"),i=t(JSON.parse(n)||s);i.subscribe(e=>localStorage.UserSettings=JSON.stringify(e));const r=t(!1),a=t(""),c=t(new Date().getHours());export{i as U,a as c,r as n,c as s};
