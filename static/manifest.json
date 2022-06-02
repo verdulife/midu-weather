@@ -1,12 +1,12 @@
 {
-	"short_name": "sveltekit-ts",
-	"name": "sveltekit-ts",
-	"description": "Work chronometer",
+	"short_name": "Midu Weather",
+	"name": "Midu Weather App",
+	"description": "App del tiempo para dispositivos móviles y escritorio. Con background reactivo al día/noche, y al tipo de clima. Con funciones de geolocalización, autocompletado de búsqueda y guardado de consultas.",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
-	"background_color": "#ffffff",
-	"theme_color": "#000000",
+	"background_color": "#51b4fe",
+	"theme_color": "#51b4fe",
 	"icons": [
 		{
 			"src": "logo-512.png",
