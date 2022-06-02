@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { navVisible } from '$lib/stores';
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { navVisible, UserSettings } from '$lib/stores';
 	import AutoComplete from 'simple-svelte-autocomplete';
 
 	$navVisible = true;
-	let myValue: string;
+	let selection: string;
 
 	async function getItems(term: string) {
 		const req = await fetch(`https://weatherapi-com.p.rapidapi.com/search.json?q=${term}`, {
@@ -20,6 +22,16 @@
 
 		return res;
 	}
+
+	function setCity({ name }: { name: string }) {
+		$UserSettings.city = name;
+		goto(`address/${name}`);
+	}
+
+	onMount(() => {
+		const input = document.querySelector('input') as HTMLInputElement;
+		input.focus();
+	});
 </script>
 
 <AutoComplete
@@ -28,9 +40,12 @@
 	localFiltering={false}
 	labelFieldName="name"
 	valueFieldName="id"
-	bind:selectedItem={myValue}
+	hideArrow={true}
+	bind:selectedItem={selection}
+	placeholder="Search for a location"
+	tabIndex={1}
 >
-	<div class="col xfill" slot="item" let:item let:label>
+	<div class="col xfill" slot="item" let:item let:label on:click={() => setCity(item)}>
 		<p>{@html label}</p>
 		<span>{item.region}, {item.country}</span>
 	</div>

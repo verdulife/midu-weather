@@ -1,38 +1,18 @@
-# create-svelte
+# Midu Weather App
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Hola 👋, soy Albert Verdú y soy desarrollador frontend y diseñador gráfico.
 
-## Creating a project
+Actualmente, estoy aplicando para encontrar trabajo como desarrollador frontend donde pueda encontrar compañeros con los que seguir aprendiendo y poder mejorar cada día.
+Si resulto premiado por este proyecto, me encantaría donar mi premio a cambio de una entrevista de trabajo donde pueda demostrar todas mis capacidades y pasión.
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```bash
-# create a new project in the current directory
-npm init svelte
+```PD: Ya que mi intención es darme a conocer, este proyecto lo he realizado yo solo. Si hay alguna cosa a medias no me lo tengáis en cuenta 😉```
 
-# create a new project in my-app
-npm init svelte my-app
-```
+---
 
-## Developing
+### Más sobre mí:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- [Likedin](https://www.linkedin.com/in/albert-verd%C3%BA-llinares-25ba19134/) 
+- [Mi curriculum](https://www.figma.com/proto/AV1pfvdTuAfM13FV77DYce/Personal?page-id=171%3A226&node-id=302%3A226&viewport=-114%2C554%2C0.3&scaling=scale-down) 
+- [Portfolio (⚠️Under construction⚠️)](https://www.verdu.ml/) 

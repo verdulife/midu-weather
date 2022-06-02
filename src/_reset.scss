@@ -154,7 +154,7 @@ code {
 	height: 100% !important;
 	
 	.input-container {
-		position: fixed !important;
+		position: absolute !important;
 		top: 30px;
 		left: 30px;
 		width: calc(100% - 60px) !important;
@@ -197,9 +197,5 @@ code {
 	.confirmed {
 		background: var(--ter-light) !important;
 		border-radius: 1rem;
-	}
-
-	&:after {
-		display: none !important;
 	}
 }

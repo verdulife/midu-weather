@@ -1,30 +1,19 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { navVisible, UserSettings } from '$lib/stores';
 
 	$navVisible = true;
 	let settings = $UserSettings;
-	let text = 'SAVE SETTINGS';
-	let saving = false;
-
-	function message() {
-		text = 'SAVED';
-		saving = true;
-
-		setTimeout(() => {
-			text = 'SAVE SETTINGS';
-			saving = false;
-		}, 1000);
-	}
 
 	function updateSettings() {
-		$UserSettings = settings;
-		message();
+		$UserSettings = {};
+		goto('/');
 	}
 </script>
 
-<form class="col acenter xfill" on:submit|preventDefault={updateSettings}>
-	<div class="input-wrapper col xfill">
-		<label for="city">Your city</label>
+<form class="col fcenter fill" on:submit|preventDefault={updateSettings}>
+	<div class="input-wrapper col acenter xfill">
+		<label for="city">Last city visited</label>
 		<input
 			class="xfill"
 			type="text"
@@ -32,10 +21,11 @@
 			name="city"
 			bind:value={settings.city}
 			placeholder="Ex. Barcelona"
+			readonly
 		/>
 	</div>
 
-	<button class:saving>{text}</button>
+	<button>RESET SETTINGS</button>
 </form>
 
 <style lang="scss">
@@ -49,6 +39,7 @@
 
 		input {
 			background: rgba(#fff, 0.6);
+			text-align: center;
 			font-size: 16px;
 			border-radius: 1rem;
 			padding: 20px 32px;
@@ -64,10 +55,6 @@
 			border-radius: 1rem;
 			padding: 20px 32px;
 			margin-top: 20px;
-		}
-
-		.saving {
-			background: $success;
 		}
 	}
 </style>
